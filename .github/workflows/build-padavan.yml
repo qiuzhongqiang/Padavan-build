@@ -119,11 +119,11 @@ jobs:
         #sed -i '/自定义项/d' .config
         #echo "自定义项=y" >> .config
         ###删除htop，避免编译失败
-        sed -i '/CONFIG_FIRMWARE_INCLUDE_HTOP/d' .config #删除htop
-        echo "CONFIG_FIRMWARE_INCLUDE_HTOP=n" >> .config #配置htop
+        #sed -i '/CONFIG_FIRMWARE_INCLUDE_HTOP/d' .config #删除htop
+        #echo "CONFIG_FIRMWARE_INCLUDE_HTOP=n" >> .config #配置htop
         ##添加openclash
-        sed -i '/CONFIG_FIRMWARE_INCLUDE_openclash/d' .config #删除openclash
-        echo "CONFIG_FIRMWARE_INCLUDE_openclash=y" >> .config #配置openclash
+        sed -i '/CONFIG_FIRMWARE_INCLUDE_clash/d' .config #删除openclash
+        echo "CONFIG_FIRMWARE_INCLUDE_clash=y" >> .config #配置openclash
         #########################################################################################
         sudo ./clear_tree
         sudo ./build_firmware_modify $TNAME 0
