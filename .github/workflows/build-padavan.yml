@@ -117,6 +117,9 @@ jobs:
         #格式如下：
         #sed -i '/自定义项/d' .config
         #echo "自定义项=y" >> .config
+        ###删除htop，避免编译失败
+        sed -i '/CONFIG_FIRMWARE_INCLUDE_HTOP/d' .config
+        echo "CONFIG_FIRMWARE_INCLUDE_HTOP=n" >> .config
         ##添加openclash
         sed -i '/openclash/d' .config
         echo "openclash=y" >> .config
